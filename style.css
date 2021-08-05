@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2? família=Padauk:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Padauk', sans-serif;
+}
+body
+{
+    min-height: 100vh;
+    background: #fff;
+
+}
+/*Configura o todo da sidebar*/
+.navegacao
+{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    bottom: 20px;
+    width: 70px;
+    border-radius: 7px;
+    border-left: 5px solid #4d4dff;
+    background: #4d4dff;
+    transition: width 0.5s;
+    overflow-x: hidden;
+}
+/*Faz parte do menu da sidebar no Js*/
+.navegacao.active{
+    width: 300px;
+}
+/*Configura o todo da lista*/
+.navegacao ul 
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 40px;
+    padding-left: 5px;
+}
+/*Configura todas a li dentro da ul*/
+.navegacao ul li
+{
+position: relative;
+list-style: none;
+width: 100%;
+border-top-left-radius: 20px;
+border-bottom-left-radius: 20px;
+}
+/*Configura a cor para os Js*/
+.navegacao ul li.active
+{
+background: #fff;
+}
+/*Configuração de estilo para a sidebar parte de cima*/
+.navegacao ul li b:nth-child(1)
+{
+position: absolute;
+top: -20px;
+height: 20px;
+width: 100%;
+background:#fff ;
+display: none;
+}
+.navegacao ul li b:nth-child(1)::before
+{
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius:  20px;
+    background: #4d4dff;
+}
+/*Configuração de estilo para a sidebar parte de baixo*/
+.navegacao ul li b:nth-child(2)
+{
+position: absolute;
+bottom: -20px;
+height: 20px;
+width: 100%;
+background:#fff ;
+display: none;
+}
+.navegacao ul li b:nth-child(2)::before
+{
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top-right-radius:  20px;
+    background: #4d4dff;
+}
+/*Configuração para corrigir falha da css no Js*/
+.navegacao ul li.active b:nth-child(1),
+.navegacao ul li.active b:nth-child(2)
+{
+    display: block;
+}
+/*Condigura todo "a" do li*/
+.navegacao ul li a
+{
+    position: relative;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+    color: #fff;
+}
+/*Configura a  cor da letra para o hover*/
+.navegacao ul li.active a
+{
+color: #2a2a8f;
+}
+/*Configura os icones e a posição das palavras*/
+.navegacao ul li a .icone
+{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+/*Configura a fonte dos icones */
+.navegacao ul li a .icone ion-icon 
+{
+font-size: 1.5em;
+}
+/*Configura as palavras  */
+
+.navegacao ul li a .titulo 
+{
+position: relative;
+display: block;
+padding-left: 10px;
+height: 60px;
+line-height: 60px;
+white-space: normal;
+}
+/*Orientar o toggle */
+.toggle
+{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: #4d4dff;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*Orientar a mundaça de cor pelo Js*/
+.toggle.active
+{
+background: #ff66b3;
+}
+/*Definir detalhes*/
+.toggle ion-icon
+{
+    position: absolute;
+    color: #fff;
+    font-size: 34px;
+    display: none;
+}
+/*Condigurações para abrir e fechar o menu*/
+.toggle ion-icon.open,
+.toggle.active ion-icon.close
+{
+display: block;
+}
+/*Condigurações para abrir e fechar o menu + troca de cor*/
+.toggle ion-icon.close,
+.toggle.active ion-icon.open
+{
+display: none;
+}
